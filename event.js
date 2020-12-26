@@ -1,1 +1,1 @@
-const targetBtnRef = document.querySelector('js-target-btn')
+const targetBtnRef = document.querySelector('.js-target-btn')
