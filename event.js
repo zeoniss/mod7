@@ -1,0 +1,1 @@
+const targetBtnRef = document.querySelector('js-target-btn')
