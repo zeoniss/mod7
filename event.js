@@ -58,12 +58,12 @@
 
 // function onClearOutput(e) {
 //     outputRef.textContent = ''
-}
+
 // ---------------------------Событие мыши--------------------------------------------
-const boxRef = document.querySelector('.js-box')
-{
-    boxRef.addEventListener('mouseenter', (e)=>
-    {console.log(e)})
+const boxRef = document.querySelector(".js-box"); {
+    boxRef.addEventListener("mouseenter", e => {
+        console.log(e);
+    });
 }
 // -----------------------------------------------------------------------------------
 // function findMatches(numbers, values) {
