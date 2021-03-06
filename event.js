@@ -60,11 +60,69 @@
 //     outputRef.textContent = ''
 
 // ---------------------------Событие мыши--------------------------------------------
-const boxRef = document.querySelector(".js-box"); {
-    boxRef.addEventListener("mouseenter", e => {
-        console.log(e);
-    });
+// const boxRef = document.querySelector(".js-box"); {
+//     boxRef.addEventListener("mouseenter", e => {
+//         console.log(e);
+//     });
+// }
+// ----------------------------Колбэк-функция
+// function greet(name) {
+//     console.log(`Добро пожаловать ${name}.`);
+// }
+
+// //------------------------- Функция высшего порядка
+// function registerGuest(name, callback) {
+//     console.log(`Регистрируем гостя ${name}.`);
+//     callback(name);
+// }
+
+// registerGuest('Манго', greet);
+// ----------------------------------------------------------------------------------
+const pizzaPalace = {
+    pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+    order(pizzaName, makePizza, onOrderError) {
+        if (!this.pizzas.includes(pizzaName)) {
+            return onOrderError(
+                `В ассортименте нет пиццы с названием ${pizzaName}.`
+            );
+        }
+        return makePizza(`${pizzaName}`);
+    },
+};
+
+// Пиши код выше этой строки
+
+// Колбэк для onSuccess
+function makePizza(pizzaName) {
+    return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
 }
+
+// Колбэк для onError
+function onOrderError(error) {
+    return `Ошибка! ${error}`;
+}
+
+// Вызовы метода с колбэками
+pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
+pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
+pizzaPalace.order('Биг майк', makePizza, onOrderError);
+pizzaPalace.order('Венская', makePizza, onOrderError);
+
+// ----------------------------------------------------------------------------------
+// function registerGuest(name, callback) {
+//     console.log(`Регистрируем гостя ${name}.`);
+//     callback(name);
+// }
+
+// // Передаём инлайн функцию greet как колбэк
+// registerGuest('Манго', function greet(name) {
+//     console.log(`Добро пожаловать ${name}.`);
+// });
+
+// // Передаём инлайн функцию notify как колбэк
+// registerGuest('Поли', function notify(name) {
+//     console.log(`Уважаемый(ая) ${name}, ваш номер будет готов через 30 минут.`);
+// });
 // -----------------------------------------------------------------------------------
 // function findMatches(numbers, values) {
 //     const matches = [] // Не изменяй эту строку
