@@ -196,6 +196,38 @@
 // list.insertAdjacentHTML('beforeend', '<li>beforeend item</li>');
 // list.insertAdjacentHTML('afterend', '<p><h3>afterend текст</h3></p>');
 // ====================================================================================================
-// Task - 1
+// // Task - 1
+// const titleRef = document.querySelectorAll('.item');
+// console.log(titleRef);
 
-const titleRef = document.querySelector('#categories');
+// const categoryList = `В списке ${titleRef.length} категории`
+// console.log(categoryList);
+
+// const category = array => {
+//     array.forEach(element => {
+//         const titleText = element.querySelector('h2')
+//         const titleRef = element.querySelectorAll('li')
+//         const messageRef = `Категория: ${titleText.textContent}. Количество элементов: ${titleRef.length}`
+//         console.log(messageRef);
+//     });
+// }
+// category(titleRef)
+// ====================================================================================================
+//  Task - 2
+const ingredients = [
+    'Картошка',
+    'Грибы',
+    'Чеснок',
+    'Помидоры',
+    'Зелень',
+    'Приправы',
+];
+
+const ingredientsList = document.querySelector('#ingredients');
+const createList = document.createElement('li')
+const ingredientsArray = ingredients => {
+    ingredients.forEach(element => {
+        const titleRef = element.querySelectorAll('.li');
+        console.log(titleRef);
+    });
+}
