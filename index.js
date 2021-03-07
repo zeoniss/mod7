@@ -213,21 +213,80 @@
 // }
 // category(titleRef)
 // ====================================================================================================
-//  Task - 2
-const ingredients = [
-    'Картошка',
-    'Грибы',
-    'Чеснок',
-    'Помидоры',
-    'Зелень',
-    'Приправы',
-];
+// //  Task - 2
+// const ingredients = [
+//     'Картошка',
+//     'Грибы',
+//     'Чеснок',
+//     'Помидоры',
+//     'Зелень',
+//     'Приправы',
+// ];
 
-const ingredientsList = document.querySelector('#ingredients');
-const createList = document.createElement('li')
-const ingredientsArray = ingredients => {
-    ingredients.forEach(element => {
-        const titleRef = element.querySelectorAll('.li');
-        console.log(titleRef);
-    });
-}
+// const ingredientsList = document.querySelector('#ingredients');
+// const ingredientsArray = ingredients.map(menu => {
+//     const createList = document.createElement('li')
+//     createList.textContent = menu
+//     return createList
+// })
+// ingredientsList.append(...ingredientsArray)
+// ====================================================================================================
+// // Task - 3
+// const images = [{
+//         url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//         alt: 'White and Black Long Fur Cat',
+//     },
+//     {
+//         url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//         alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//     },
+//     {
+//         url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//         alt: 'Group of Horses Running',
+//     },
+// ];
+// const listImagesRef = document.querySelector('#gallery');
+// const imagesCreate = imagesList(images);
+// function imagesList(images) {
+//     return images.map(({ url, alt }) => {
+//         return `<li><img src="${url}" alt="${alt}"></li>`;
+//     });
+// }
+// listImagesRef.insertAdjacentHTML('beforeend', imagesCreate);
+// console.log(imagesList(images));
+// ====================================================================================================
+// // События
+// const singleBtn = document.querySelector('#single');
+// // Для обработчика события можно (и желательно) 
+// // использовать отдельную функцию, ссылку на которую 
+// // передаем вторым аргументом в addEventListener
+// const handleClick = () => alert('CLICK!');
+// singleBtn.addEventListener('click', handleClick);
+// //========================================================
+// // Можно вешать более одного обработчика на элемент, 
+// // даже на одно и тоже событие
+// const multiBtn = document.querySelector('#multiple');
+// const firstCallback = () => alert('First callback!');
+// const secondCallback = () => alert('Second callback!');
+// const thirdCallback = () => alert('Third callback!');
+// multiBtn.addEventListener('click', firstCallback);
+// multiBtn.addEventListener('click', secondCallback);
+// multiBtn.addEventListener('click', thirdCallback);
+// ====================================================================================================
+const addBtn = document.querySelector('button[data-action="add"]');
+const removeBtn = document.querySelector('button[data-action="remove"]');
+const btn = document.querySelector("#btn");
+
+const handleClick = () => {
+    alert("CLICK EVENT LISTENER ALERT!");
+};
+
+addBtn.addEventListener("click", () => {
+    btn.addEventListener("click", handleClick);
+});
+
+removeBtn.addEventListener("click", () => {
+    btn.removeEventListener("click", handleClick);
+});
+// ====================================================================================================
+//  Task - 4

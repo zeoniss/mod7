@@ -1,12 +1,9 @@
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 1rem;
-}
-
-.article {
-    width: 320px;
-    margin-bottom: 32px;
-}
-
-.article-text {
-    color: #F26419;
+    text-align: center;
 }
