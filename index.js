@@ -151,10 +151,39 @@
 // const link = article.querySelector('.link')
 // link.remove()
 // =====================================================================================
-const parent = document.querySelector('.parent');
-const article = document.querySelector('.article');
+// // Клонирование.
+// const parent = document.querySelector('.parent');
+// const article = document.querySelector('.article');
 
-// Создает точную глубокую копию всей статьи
-const clone = article.cloneNode(true);
-clone.classList.add('blue-text');
-parent.appendChild(clone);
+// // Создает точную глубокую копию всей статьи
+// const clone = article.cloneNode(true);
+// clone.classList.add('blue-text');
+// parent.appendChild(clone);
+// =====================================================================================
+// Свойство innerHTML
+//     Еще один способ создать DOM - элементы и поместить их в дерево -
+//     это использовать строки и позволить браузеру сделать всю тяжелую работу.
+//     Как мы увидим далее, у такого подхода есть свои плюсы и минусы.
+// Создание узлов
+const article = document.querySelector(".article");
+const htmlString =
+    `<p class="article-text">Nullam quis ante. Vestibulum dapibus nunc ac augue. In consectetuer turpis ut velit.</p>
+   <a class="link" href="#">Read more...</a>`;
+
+// Уберите += и поставьте =, видите результат? заголовок удаляется,
+// еще раз перечитайте сноску о работе innerHTML, о том как содержимое перезаписывается
+// Если необходимо добавить к уже существующей разметке, то используем +=
+article.innerHTML += htmlString;
+// Можно делать множественные вставки, для этого мы конкатенируем
+// всю необходимую разметку в одну строку, после чего присваиваем ее
+// innerHTML родителя. 
+// Почему именно так, а не поэлементно? Об этом мы поговорим далее.
+const list = document.querySelector('.list');
+const tech = ["HTML", "CSS", "JavaScript", "React", "Node"];
+
+const markup = tech.reduce(
+    (string, item) => string + `<li>${item}</li>`,
+    "");
+// Посмотрите что будет в консоли, одна длинная строка с "тегами"
+console.log(markup);
+list.innerHTML += markup
