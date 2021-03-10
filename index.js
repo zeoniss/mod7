@@ -273,20 +273,80 @@
 // multiBtn.addEventListener('click', secondCallback);
 // multiBtn.addEventListener('click', thirdCallback);
 // ====================================================================================================
-const addBtn = document.querySelector('button[data-action="add"]');
-const removeBtn = document.querySelector('button[data-action="remove"]');
-const btn = document.querySelector("#btn");
+// const addBtn = document.querySelector('button[data-action="add"]');
+// const removeBtn = document.querySelector('button[data-action="remove"]');
+// const btn = document.querySelector("#btn");
 
-const handleClick = () => {
-    alert("CLICK EVENT LISTENER ALERT!");
-};
+// const handleClick = () => {
+//     alert("CLICK EVENT LISTENER ALERT!");
+// };
 
-addBtn.addEventListener("click", () => {
-    btn.addEventListener("click", handleClick);
-});
+// addBtn.addEventListener("click", () => {
+//     btn.addEventListener("click", handleClick);
+// });
 
-removeBtn.addEventListener("click", () => {
-    btn.removeEventListener("click", handleClick);
-});
+// removeBtn.addEventListener("click", () => {
+//     btn.removeEventListener("click", handleClick);
+// });
 // ====================================================================================================
-//  Task - 4
+// const btn = document.querySelector("#btn");
+// // event - это и есть обьект события который автоматически 
+// // передается первым аргументом, мы можем называть его как угодно, 
+// // хоть qwerty, но чаще всего он называется или e, evt или event
+// const handleClick = event => {
+//     console.log("event: ", event); //откройте консоль чтобы увидеть весь объект целиком
+//     console.log("event type: ", event.type); // event type:  click// будет window, так как мы используем стрелочную функцию, 
+//     // которая использует внешний контекст 
+//     // Если использовать обычную функцию то this будет самим элементом 
+//     // button и равен currentTarget
+//     console.log("this: ", this);
+//     console.log("target: ", event.target); // <button id="btn">CLICK ME!</button>
+// };
+// btn.addEventListener("click", handleClick);
+// ====================================================================================================
+// const form = document.querySelector(".form");
+// const loginInput = form.querySelector('input[type="text"]');
+// const passInput = form.querySelector('input[type="password"]');
+// form.addEventListener("submit", handleSubmit);
+// function handleSubmit(event) {
+//     // Предотвращаем поведение по умолчанию
+//     event.preventDefault();
+//     const login = loginInput.value.trim();
+//     const password = passInput.value.trim();
+//     if (login === '' || password === '') {
+//         return alert('Пожалуйста введите валидную информацию!')
+//     }
+//     form.reset();
+//     alert(`
+//     Спасибо за регистрацию!
+//     Логин: ${login} 
+//     Пароль: ${password}
+//   `);
+// }
+// ====================================================================================================
+// const clearLogBtn = document.querySelector('button[data-action="clear"]');
+// const logList = document.querySelector(".log-list");
+
+// window.addEventListener("keydown", logMessage);
+// window.addEventListener("keyup", logMessage);
+
+// clearLogBtn.addEventListener("click", e => {
+//     logList.innerHTML = "";
+// });
+
+
+// function logMessage({ type, key, code }) {
+//     const message = document.createElement("section");
+//     const title = document.createElement('h2');
+//     title.textContent = `${type} event`;
+
+//     const text = document.createElement('p');
+//     text.textContent = `key value is "${key}" | code value is "${code}"`
+
+//     message.append(title, text);
+//     logList.appendChild(message);
+// }
+// ==================================================================================================
+// События элементов форм
+window.addEventListener('keypress', event =>
+    console.log(event))
